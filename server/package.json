@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Boudewijn Danser",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.3",
+    "pg": "6",
+    "sequelize": "^4.37.6"
+  }
+}
