@@ -17,6 +17,7 @@ class AdsList extends PureComponent {
     })).isRequired
   }
 
+
   componentWillMount() {
     this.props.fetchAllAds()
   }
@@ -25,7 +26,7 @@ class AdsList extends PureComponent {
     const {ads} = this.props
     return (
       <div>
-        <h1>Ads baby!</h1>
+        <h1>Ebay Clone</h1>
 
         <table>
 

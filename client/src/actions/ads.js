@@ -38,8 +38,9 @@ export const fetchAllAds = () => (dispatch) => {
 }
 
 export const createAd = (ad) => (dispatch) => {
+  console.log('--- ad from createAd: ',ad)
   request
-    .post(`${baseUrl}/ads`)
+    .post(`${baseUrl}/place-ad`)
     .send(ad)
     .then(response => dispatch({
       type: ADD_AD,

@@ -22,6 +22,8 @@ class AdDetail extends PureComponent {
          <h4>&euro; {ad.price}.00</h4>
          <img src={ad.picture} alt={ad.title} />
          <p>{ad.description}</p>
+         <p>{ad.email}</p>
+         <p>{ad.phone}</p>
       </div>
     )
   }
