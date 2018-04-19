@@ -45,7 +45,7 @@ const Ad = sequelize.define('ad', {
   allowNull: false
 },
   phone: {
-  type: Sequelize.INTEGER,
+  type: Sequelize.STRING,
   allowNull: false}
 },
  {
@@ -86,11 +86,11 @@ app.get('/ads/:id', (request, response) => {
 	  })
 })
 
-app.post('/ads', (request, response) => {
+app.post('/place-ad', (request, response) => {
   console.log('---> Starting post')
   const ad = request.body
   console.log(ad)
-  console.log('Request body / ad: ', ad)
+  console.log('-----------------Request body / ad: ', ad)
 
   Ad.create(ad).then(entity => {
 
@@ -122,15 +122,15 @@ app.put('/ads/:id', (request, response) => {
 })
 
 app.delete('/ads/:id', (request, response) => {
-  const adId = Number(req.params.id)
+  const adId = Number(request.params.id)
 
   Ad.findById(request.params.id)
 	  .then(entity => {
-	    // change the product and store in DB
+	    // change the ad and store it
 	    return entity.destroy()
 	  })
 	  .then(_ => {
-	    // respond with the changed product and status code 200 OK
+	    // respond with the changed AD and status code 200 OK
 	    response.send({
 	      message: 'The ad was deleted.'
 	    })
